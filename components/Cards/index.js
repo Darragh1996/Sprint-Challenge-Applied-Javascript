@@ -31,6 +31,11 @@ function createArticle(article){
     headline.textContent = article.headline;
     image.setAttribute('src', article.authorPhoto);
     aName.textContent = `By ${article.authorName}`;
+
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imgContainer.classList.add('img-container');
     
     card.append(headline);
     card.append(author);
@@ -52,6 +57,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     }).then(arr =>{
         for(let i = 0; i < arr.length; i++){
             arr[i].forEach(function(art){
+                console.log(art);
                 cardsContainer.append(createArticle(art));
             })
         }

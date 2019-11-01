@@ -57,7 +57,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     }).then(arr =>{
         for(let i = 0; i < arr.length; i++){
             arr[i].forEach(function(art){
-                console.log(art);
                 cardsContainer.append(createArticle(art));
             })
         }
